@@ -5,84 +5,135 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="content-language” content=”en-us”>
-    <title>obrien.io</title>
-    <link rel=" preconnect" href="https://fonts.googleapis.com">
+    <meta http-equiv="content-language" content="en-us">
+    <meta name="description" content="Andrew O'Brien - Personal website">
+
+    <!-- Open Graph / Social -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Andrew O'Brien">
+    <meta property="og:description" content="Personal website">
+    <meta property="og:url" content="https://obrien.io">
+    <meta name="twitter:card" content="summary">
+
+    <title>Andrew O'Brien</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%23fff'>A</text></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 
     <style>
-        html {
+        * {
             box-sizing: border-box;
-            font-size: 2rem;
-            font-family: 'Roboto', sans-serif
-        }
-
-        *,
-        *:before,
-        *:after {
-            box-sizing: inherit
-        }
-
-        body,
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6,
-        p,
-        ol,
-        ul {
             margin: 0;
             padding: 0;
-            font-weight: 400
         }
 
-        ol,
-        ul {
-            list-style: none
-        }
-
-        img {
-            max-width: 100%;
-            height: auto
-        }
-
-        * {
-            box-sizing: border-box
-        }
-
-        a,
-        a:visited {
-            color: #333
+        html {
+            font-size: 18px;
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         body {
-            padding: 2rem
+            background-color: #0a0a0a;
+            color: #e8e8e8;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            animation: fadeIn 0.8s ease-out;
         }
 
-        li {
-            margin-top: 1rem
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 2.5rem;
+            color: #fff;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        a {
+            color: #888;
+            text-decoration: none;
+            font-weight: 300;
+            font-size: 1rem;
+            letter-spacing: 0.05em;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #fff;
+        }
+
+        @media (min-width: 480px) {
+            .links {
+                flex-direction: row;
+                justify-content: center;
+                gap: 2rem;
+            }
+
+            a {
+                position: relative;
+            }
+
+            a::after {
+                content: '';
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                width: 0;
+                height: 1px;
+                background-color: #fff;
+                transition: width 0.3s ease;
+            }
+
+            a:hover::after {
+                width: 100%;
+            }
         }
     </style>
 </head>
 
 <body>
-    <h1>Andrew O'Brien</h1>
-    <hr>
-    <ul>
-        <li><a href="mailto:hello@obrien.io">hello@obrien.io</a></li>
-        <li><a href="https://github.com/aohbrien">Github</a></li>
-        <li><a href="https://www.linkedin.com/in/andrewohbrien/">LinkedIn</a></li>
-    </ul>
+    <main class="container">
+        <h1>Andrew O'Brien</h1>
+        <nav class="links">
+            <a href="mailto:hello@obrien.io">hello@obrien.io</a>
+            <a href="https://github.com/aohbrien">GitHub</a>
+            <a href="https://www.linkedin.com/in/andrewohbrien/">LinkedIn</a>
+        </nav>
+    </main>
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-87152334-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
-
         gtag('config', 'UA-87152334-1');
     </script>
 </body>
